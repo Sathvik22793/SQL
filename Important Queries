@@ -1,0 +1,7 @@
+SELECT c.name, m.title
+FROM Rentals r
+JOIN Movies m ON r.movie_id = m.movie_id
+JOIN Customers c ON r.customer_id = c.customer_id;
+
+SELECT title FROM Movies
+WHERE movie_id NOT IN (SELECT movie_id FROM Rentals);
