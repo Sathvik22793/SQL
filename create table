@@ -1,0 +1,22 @@
+CREATE TABLE Movies (
+  movie_id INT PRIMARY KEY,
+  title VARCHAR(50),
+  genre VARCHAR(30),
+  year INT
+);
+
+CREATE TABLE Customers (
+  customer_id INT PRIMARY KEY,
+  name VARCHAR(50),
+  phone VARCHAR(15)
+);
+
+CREATE TABLE Rentals (
+  rental_id INT PRIMARY KEY,
+  movie_id INT,
+  customer_id INT,
+  rental_date DATE,
+  return_date DATE,
+  FOREIGN KEY (movie_id) REFERENCES Movies(movie_id),
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
